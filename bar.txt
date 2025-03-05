@@ -1,0 +1,107 @@
+#include <stdio.h>
+
+int main()
+{
+    int idade;
+    printf("qual sua idade?: ");
+    scanf("%i", &idade);
+    
+    if(idade < 18)
+    {
+        printf("\nvoce eh de menor e nao pode comprar bebidas");
+    }
+    else
+    {
+        int opcao, escolha, quantidade;
+        float valor_a_pagar;
+        printf("\nbem-vindo ao bar caralhoa4.\nesse eh o nosso menu:\n1. whisky\n2. vodka\n3. cerveja\n4. cachaça\n\nescolha o que deseja: ");
+        scanf("%i", &opcao);
+        
+        switch (opcao)
+        {
+            case 1: 
+             
+                printf ("\nwhisky:\ncodigo nome preço\n100 whisky1 R$200,00\n101 whisky2 R$150,00\n102 whisky3 R$140,00 "); 
+                printf("\n\ndigite o codigo e a quantidade do whisky que voce deseja: ");
+                scanf("%i %i", &escolha,&quantidade);
+                
+                switch(escolha)
+                {
+                    case 100: valor_a_pagar = 200 * quantidade; break;
+                    case 101: valor_a_pagar = 150 * quantidade; break;
+                    case 102: valor_a_pagar = 140 * quantidade; break;
+                    default: printf("opcao invalida");
+                }
+                
+                break;
+                
+            case 2:
+              
+                printf ("\nvodca:\ncodigo nome preço\n200 vodca1 R$60,00\n201 vodca2 R$40,00\n202 vodca3 R$30,00");
+                printf("\n\ndigite o codigo e a quantidade da vodca que voce deseja: ");
+                scanf("%i %i", &escolha,&quantidade); 
+                
+                switch(escolha)
+                {
+                    case 200: valor_a_pagar = 60 * quantidade; break;
+                    case 201: valor_a_pagar = 40 * quantidade; break;
+                    case 202: valor_a_pagar = 30 * quantidade; break;
+                    default: printf("opcao invalida");
+                }
+                
+                break;
+                
+            case 3: 
+              
+                printf ("\nescolha sua cerveja:\ncodigo nome preço\n300 cerveja1 R$1,50\n301 cerveja2 R$2,00\n302 cerveja3 R$3,00"); 
+                printf("\n\ndigite o codigo e a quantidade da cerveja que voce deseja: ");
+                scanf("%i %i", &escolha,&quantidade);
+                
+                switch(escolha)
+                {
+                    case 300: valor_a_pagar = 1.5 * quantidade; break;
+                    case 301: valor_a_pagar = 2 * quantidade; break;
+                    case 302: valor_a_pagar = 3 * quantidade; break;
+                    default: printf("opcao invalida");
+                }
+                
+                break;
+                
+            case 4: 
+             
+                printf ("\nescolha sua cachaça:\ncodigo nome preço\n400 cachaça1 R$8,00\n401 cachaça2 R$20,00\n402 cachaça3 R$22,00");
+                printf("\n\ndigite o codigo e a quantidade da cachaça que voce deseja: ");
+                scanf("%i %i", &escolha,&quantidade); 
+                
+                switch(escolha)
+                {
+                    case 400: valor_a_pagar = 8 * quantidade; break;
+                    case 401: valor_a_pagar = 20 * quantidade; break;
+                    case 402: valor_a_pagar = 22 * quantidade; break;
+                    default: printf("opcao invalida");
+                }
+                
+                break;
+                
+            default: 
+                printf ("\nopcao invalida");
+        }
+        
+        if (quantidade > 100)
+        {
+             printf("voce comprou %i bebidas do codigo %i, totalizando R$%f", quantidade, escolha, valor_a_pagar * 0.65);
+        }
+        else if (quantidade > 50)
+        {
+             printf("voce comprou %i bebidas do codigo %i, totalizando R$%f", quantidade, escolha, valor_a_pagar * 0.7);
+        }
+        else if (quantidade > 5)
+        {
+             printf("voce comprou %i bebidas do codigo %i, totalizando R$%f", quantidade, escolha, valor_a_pagar * 0.9);
+        }
+        else
+        {
+             printf("voce comprou %i bebidas do codigo %i, totalizando R$%f", quantidade, escolha, valor_a_pagar);
+        }
+    }
+}
